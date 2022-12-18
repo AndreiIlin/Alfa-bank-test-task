@@ -1,26 +1,21 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: [ "main" ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Build
-      run: |
-        yarn install
-        yarn build
-      env:
-        VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
+        run: |
+          yarn install
+          yarn build
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
