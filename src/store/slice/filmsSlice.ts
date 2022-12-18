@@ -21,7 +21,6 @@ export const getFilms = createAsyncThunk<FilmShort[], void>(
       filmId: film.filmId,
       nameRu: film.nameRu,
       posterUrlPreview: film.posterUrlPreview,
-      rating: film.rating,
       year: film.year,
       liked: false,
     }));
@@ -35,7 +34,7 @@ export const filmsAdapter = createEntityAdapter<FilmShort>({
 const filmsSlice = createSlice({
   name: 'films',
   initialState: filmsAdapter.getInitialState({
-    loadingStatus: 'success',
+    loadingStatus: 'idle',
     filteredOnly: false,
   }),
   reducers: {

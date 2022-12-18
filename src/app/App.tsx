@@ -24,7 +24,9 @@ export const App: FC = () => {
       {isLoading && <SpinnerContainer />}
       {isError && <h3 className={styles.errorMessage}>Что-то пошло не так... :( Пожалуйста, перезагрузите страницу</h3>}
       {isSuccess && <>
-        <FilterButton />
+        <div className={styles.container}>
+          <FilterButton />
+        </div>
         <FilmsContainer />
       </>}
     </div>

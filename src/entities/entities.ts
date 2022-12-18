@@ -16,7 +16,6 @@ export interface FilmShort {
   filmId: number;
   nameRu?: string;
   posterUrlPreview: string;
-  rating?: number;
   year?: number;
   liked: boolean;
 }

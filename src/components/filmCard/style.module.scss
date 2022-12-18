@@ -5,6 +5,14 @@
   box-shadow: 4px 4px 2px #e7e7e7;
   transition: all 0.2s ease-in-out;
 
+  @media (max-width: 992px) {
+    width: calc(33% - 30px);
+  }
+
+  @media (max-width: 767px) {
+    width: calc(50% - 30px);
+  }
+
   &:hover {
     transform: scale(1.1);
   }
